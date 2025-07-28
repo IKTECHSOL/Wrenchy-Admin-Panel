@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:wrenchy_admin/screens/user_management_screen.dart';
 import 'package:wrenchy_admin/widgets/app_logo.dart';
 
 
 import '../constant/app_text_styles.dart';
 import '../constant/color_panel.dart';
+import 'dashboard_screen.dart';
 
 final List<Map<String, dynamic>> mainHeadings = [
   {
@@ -45,7 +47,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           Expanded(
               flex: 5,
-              child: SizedBox())
+              child: _currentIndex == 0 ? DashboardScreen() : UserManagementScreen())
         ],
       ),
     );
