@@ -37,6 +37,7 @@ dependencies:
   google_fonts: any
   fl_chart: ^0.66.0
   lucide_icons: any
+  font_awesome_flutter: any
 
 dev_dependencies:
   flutter_test:

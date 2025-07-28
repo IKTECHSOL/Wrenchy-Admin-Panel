@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:wrenchy_admin/constant/color_panel.dart';
 
@@ -11,7 +12,6 @@ class UserManagementScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Container(
-
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -21,7 +21,7 @@ class UserManagementScreen extends StatelessWidget {
               color: Colors.black12,
               blurRadius: 8,
               offset: Offset(0, 4),
-            )
+            ),
           ],
         ),
         child: Column(
@@ -60,21 +60,47 @@ class UserManagementScreen extends StatelessWidget {
                     DataColumn(label: Text('Actions')),
                   ],
                   rows: [
-                    _buildUserRow('John Doe', 'john@example.com', 'Active', [LucideIcons.search, LucideIcons.userX, LucideIcons.mail]),
-                    _buildUserRow('Jane Smith', 'jane@example.com', 'Active', [LucideIcons.search, LucideIcons.key, LucideIcons.mail]),
-                    _buildUserRow('Bob Johnson', 'bob@example.com', 'Active', [LucideIcons.search, LucideIcons.user, LucideIcons.mail]),
-                    _buildUserRow('Alice Brown', 'alice@example.com', 'Active', [LucideIcons.search, LucideIcons.laptop, LucideIcons.mail]),
+                    _buildUserRow('John Doe', 'john@example.com', 'Active', [
+                      FontAwesomeIcons.eye,
+                      FontAwesomeIcons.ban,
+                      FontAwesomeIcons.envelope,
+                    ]),
+                    _buildUserRow('Jane Smith', 'jane@example.com', 'Active', [
+                      FontAwesomeIcons.eye,
+                      FontAwesomeIcons.ban,
+                      FontAwesomeIcons.envelope,
+                    ]),
+                    _buildUserRow('Bob Johnson', 'bob@example.com', 'Active', [
+                      FontAwesomeIcons.eye,
+                      FontAwesomeIcons.ban,
+                      FontAwesomeIcons.envelope,
+                    ]),
+                    _buildUserRow(
+                      'Alice Brown',
+                      'alice@example.com',
+                      'Active',
+                      [
+                        FontAwesomeIcons.eye,
+                        FontAwesomeIcons.ban,
+                        FontAwesomeIcons.envelope,
+                      ],
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  DataRow _buildUserRow(String name, String email, String status, List<IconData> icons) {
+  DataRow _buildUserRow(
+    String name,
+    String email,
+    String status,
+    List<IconData> icons,
+  ) {
     return DataRow(
       cells: [
         DataCell(Text(name)),
@@ -82,13 +108,20 @@ class UserManagementScreen extends StatelessWidget {
         DataCell(Text(status)),
         DataCell(
           Row(
-            children: icons.map((icon) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Icon(icon, size: 20),
-            )).toList(),
+            children: icons
+                .map(
+                  (icon) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    child: Icon(icon, size: 20),
+                  ),
+                )
+                .toList(),
           ),
         ),
       ],
     );
   }
 }
+
+
+
