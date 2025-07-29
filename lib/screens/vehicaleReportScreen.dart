@@ -36,7 +36,7 @@ class VehicleReportsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               const Text(
-                'Scan Overview\nView and download OBD scans submitted by users.',
+                'Scan Overview\nView  OBD scans submitted by users.',
                 style: TextStyle(fontSize: 16, color: Colors.black54),
               ),
               const SizedBox(height: 20),
@@ -86,7 +86,7 @@ class VehicleReportsScreen extends StatelessWidget {
         0: FixedColumnWidth(120),
         1: FixedColumnWidth(140),
         2: FlexColumnWidth(),
-        3: FixedColumnWidth(80),
+        3: FixedColumnWidth(100),
       },
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: [
