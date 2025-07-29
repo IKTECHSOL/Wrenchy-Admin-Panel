@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wrenchy_admin/screens/user_management_screen.dart';
+import 'package:wrenchy_admin/screens/vehicaleReportScreen.dart';
 import 'package:wrenchy_admin/widgets/app_logo.dart';
 
 
@@ -47,7 +48,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 1;
+  int _currentIndex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +97,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           Expanded(
               flex: 5,
-              child: _currentIndex == 0 ? DashboardScreen() : UserManagementScreen())
+              child: _currentIndex == 0 ? DashboardScreen() : _currentIndex == 1 ? UserManagementScreen() : VehicleReportsScreen())
         ],
       ),
     );
