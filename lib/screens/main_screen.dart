@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wrenchy_admin/screens/analytics_screen.dart';
 import 'package:wrenchy_admin/screens/subscriptin_management_screen.dart';
 import 'package:wrenchy_admin/screens/user_management_screen.dart';
 import 'package:wrenchy_admin/screens/vehicaleReportScreen.dart';
@@ -6,6 +7,7 @@ import 'package:wrenchy_admin/widgets/app_logo.dart';
 
 import '../constant/app_text_styles.dart';
 import '../constant/color_panel.dart';
+import 'customer_support_inbox_screen.dart';
 import 'dashboard_screen.dart';
 
 final List<Map<String, dynamic>> mainHeadings = [
@@ -27,7 +29,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 3;
+  int _currentIndex = 5;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +91,7 @@ class _MainScreenState extends State<MainScreen> {
                 ? UserManagementScreen()
                 : _currentIndex == 2
                 ? VehicleReportsScreen()
-                : SubscriptionManagementScreen(),
+                : _currentIndex == 3 ? SubscriptionManagementScreen() :  _currentIndex == 4 ? ManageHelpRequestsScreen() : AnalyticsScreen(),
           ),
         ],
       ),

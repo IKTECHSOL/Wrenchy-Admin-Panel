@@ -22,48 +22,45 @@ class VehicleReportsScreen extends StatelessWidget {
             ),
           ],
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Vehicle Reports',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Vehicle Reports',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Scan Overview\nView  OBD scans submitted by users.',
+              style: TextStyle(fontSize: 16, color: Colors.black54),
+            ),
+            const SizedBox(height: 20),
+            Wrap(
+              spacing: 12,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  style: filterButtonStyle,
+                  child: const Text("Filter by date"),
                 ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Scan Overview\nView  OBD scans submitted by users.',
-                style: TextStyle(fontSize: 16, color: Colors.black54),
-              ),
-              const SizedBox(height: 20),
-              Wrap(
-                spacing: 12,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: filterButtonStyle,
-                    child: const Text("Filter by date"),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: filterButtonStyle,
-                    child: const Text("Filter by user"),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: filterButtonStyle,
-                    child: const Text("Filter by severity level"),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-              _buildTable(),
-            ],
-          ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: filterButtonStyle,
+                  child: const Text("Filter by user"),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: filterButtonStyle,
+                  child: const Text("Filter by severity level"),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            _buildTable(),
+          ],
         ),
       ),
     );
