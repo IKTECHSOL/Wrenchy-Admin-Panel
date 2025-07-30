@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wrenchy_admin/screens/analytics_screen.dart';
+import 'package:wrenchy_admin/screens/app_settings_screen.dart';
 import 'package:wrenchy_admin/screens/subscriptin_management_screen.dart';
 import 'package:wrenchy_admin/screens/user_management_screen.dart';
 import 'package:wrenchy_admin/screens/vehicaleReportScreen.dart';
@@ -29,7 +30,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 5;
+  int _currentIndex = 6;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +92,10 @@ class _MainScreenState extends State<MainScreen> {
                 ? UserManagementScreen()
                 : _currentIndex == 2
                 ? VehicleReportsScreen()
-                : _currentIndex == 3 ? SubscriptionManagementScreen() :  _currentIndex == 4 ? ManageHelpRequestsScreen() : AnalyticsScreen(),
+                : _currentIndex == 3 ? SubscriptionManagementScreen()
+                :  _currentIndex == 4
+                ? ManageHelpRequestsScreen()
+                : _currentIndex == 5  ?  AnalyticsScreen() : AppSettingsScreen(),
           ),
         ],
       ),

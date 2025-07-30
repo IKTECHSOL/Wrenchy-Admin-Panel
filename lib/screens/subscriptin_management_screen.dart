@@ -7,10 +7,10 @@ class SubscriptionManagementScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea( // Ensures no content is hidden behind system UI elements like the status bar
+    return SafeArea(
       child: Scaffold(
         body: Container(
-          margin: const EdgeInsets.all(24.0), // You can use margin instead of padding to control the space
+          margin: const EdgeInsets.all(24.0),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -41,7 +41,7 @@ class SubscriptionManagementScreen extends StatelessWidget {
                   children: [
                     SubscriptionPlan(
                       title: 'Basic',
-                      price: '\$0/mo', // Basic plan is free
+                      price: '\$0/mo',
                       features: [
                         FeatureToggle(feature: 'Feature 1'),
                         FeatureToggle(feature: 'Feature 2'),
