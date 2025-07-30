@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wrenchy_admin/screens/auth/login_screen.dart';
 import 'package:wrenchy_admin/screens/main_screen.dart';
 
 Future<void> main() async {
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: const MainScreen(),
+      home:  LoginScreen(),
+      // home: const MainScreen(),
     );
   }
 }
