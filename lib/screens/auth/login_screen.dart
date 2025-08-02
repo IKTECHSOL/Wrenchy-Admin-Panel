@@ -7,6 +7,7 @@ import 'package:wrenchy_admin/screens/auth/widgets/auth_footer.dart';
 import 'package:wrenchy_admin/widgets/app_logo.dart';
 
 import '../../widgets/buttons.dart';
+import '../../widgets/text_inputs.dart';
 import '../main_screen.dart';
 import 'forgot_password_screen.dart';
 
@@ -45,23 +46,17 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
                   ),
                   SizedBox(height: 20),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Email Address',
-                      labelStyle: TextStyle(color: Colors.grey[600]),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.email, color: ColorPanel.secondaryColor),
-                    ),
+                  CustomTextInput(
+                    prefixIcon: Icons.email,
+                    label: 'Email Address',
+
                   ),
                   SizedBox(height: 20),
-                  TextField(
+                  CustomTextInput(
+                    prefixIcon: Icons.lock,
+                    label: 'Password',
                     obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      labelStyle: TextStyle(color: Colors.grey[600]),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.lock, color: ColorPanel.secondaryColor),
-                    ),
+
                   ),
                   SizedBox(height: 10),
                   Align(

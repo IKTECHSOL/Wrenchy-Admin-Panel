@@ -6,6 +6,7 @@ import 'package:wrenchy_admin/screens/auth/widgets/auth_footer.dart';
 import 'package:wrenchy_admin/widgets/app_logo.dart';
 
 import '../../widgets/buttons.dart';
+import '../../widgets/text_inputs.dart';
 import '../main_screen.dart';
 
 
@@ -40,13 +41,10 @@ class ForgotPasswordScreen extends StatelessWidget {
                   SizedBox(height: 20),
 
                   SizedBox(height: 20),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Email Address',
-                      labelStyle: TextStyle(color: Colors.grey[600]),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.email, color: ColorPanel.secondaryColor),
-                    ),
+                  CustomTextInput(
+                  prefixIcon: Icons.email,
+                    label: 'Email Address',
+
                   ),
                   SizedBox(height: 30),
                   PrimaryButton(
@@ -67,4 +65,5 @@ class ForgotPasswordScreen extends StatelessWidget {
     );
   }
 }
+
 

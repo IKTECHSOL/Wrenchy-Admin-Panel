@@ -5,6 +5,7 @@ import 'package:wrenchy_admin/screens/auth/widgets/auth_footer.dart';
 import 'package:wrenchy_admin/widgets/app_logo.dart';
 
 import '../../widgets/buttons.dart';
+import '../../widgets/text_inputs.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -58,24 +59,17 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-                  TextField(
+                  CustomTextInput(
+                    prefixIcon: Icons.lock,
+                    label: 'Password',
+
                     obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      labelStyle: TextStyle(color: Colors.grey[600]),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.lock, color: ColorPanel.secondaryColor),
-                    ),
                   ),
                   SizedBox(height: 20),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Confirm Password',
-                      labelStyle: TextStyle(color: Colors.grey[600]),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.lock, color: ColorPanel.secondaryColor),
-                    ),
+                  CustomTextInput(
+                    prefixIcon: Icons.lock,
+                    label: 'Confirm Password',
+
                   ),
                   SizedBox(height: 30),
                   PrimaryButton(
