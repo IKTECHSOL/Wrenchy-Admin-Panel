@@ -54,7 +54,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Password reset email has been send to your email")));
                     Navigator.pop(context);
                     },
-                    title: "Login",
+                    title: "Forgot Password",
                   ),
                   SizedBox(height: 20),
 
