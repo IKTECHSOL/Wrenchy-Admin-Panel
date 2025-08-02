@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:wrenchy_admin/constant/app_text_styles.dart';
 import 'package:wrenchy_admin/constant/color_panel.dart';
 import 'package:wrenchy_admin/screens/auth/signup_screen.dart';
@@ -8,11 +7,10 @@ import 'package:wrenchy_admin/widgets/app_logo.dart';
 
 import '../../widgets/buttons.dart';
 import '../main_screen.dart';
-import 'forgot_password_screen.dart';
 
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class ForgotPasswordScreen extends StatelessWidget {
+  const ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +38,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   AppLogo(width: 130,),
                   SizedBox(height: 20),
-                  Text(
-                    'Welcome Back!',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
-                  ),
+
                   SizedBox(height: 20),
                   TextField(
                     decoration: InputDecoration(
@@ -53,39 +48,16 @@ class LoginScreen extends StatelessWidget {
                       prefixIcon: Icon(Icons.email, color: ColorPanel.secondaryColor),
                     ),
                   ),
-                  SizedBox(height: 20),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      labelStyle: TextStyle(color: Colors.grey[600]),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.lock, color: ColorPanel.secondaryColor),
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(onPressed: (){
-                      Get.to(()=>ForgotPasswordScreen());
-                    }, child: Text("Forgot Password?",style: AppTextStyles.medium.copyWith(color: ColorPanel.secondaryColor),)),
-                  ),
                   SizedBox(height: 30),
                   PrimaryButton(
                     onTap: () {
-                      Get.to(()=>MainScreen());
-
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Password reset email has been send to your email")));
+                    Navigator.pop(context);
                     },
                     title: "Login",
                   ),
                   SizedBox(height: 20),
-                  AuthFooter(
-                    title: 'Don\'t have an account? ',
-                    pageName: 'Sign Up',
-                    onTap: (){
-                     Get.to(()=>SignupScreen());
-                    },
-                  ),
+
                 ],
               ),
             ),

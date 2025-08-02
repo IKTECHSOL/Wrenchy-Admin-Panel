@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wrenchy_admin/constant/app_text_styles.dart';
 import 'package:wrenchy_admin/constant/color_panel.dart';
+import 'package:wrenchy_admin/screens/auth/widgets/auth_footer.dart';
 import 'package:wrenchy_admin/widgets/app_logo.dart';
+
+import '../../widgets/buttons.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -75,33 +78,20 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 30),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        backgroundColor: ColorPanel.secondaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        elevation: 5,
-                      ),
-                      child: Text('Sign Up', style: AppTextStyles.regular.copyWith(color: Colors.white)),
-                    ),
+                  PrimaryButton(
+                    onTap: () {
+                      Navigator.pop(context);
+
+                    },
+                    title: 'Sign Up',
                   ),
                   SizedBox(height: 20),
-                  GestureDetector(
+                  AuthFooter(
+                    title: 'Already have an account? ',
+                    pageName: "Login",
                     onTap: (){
                       Navigator.pop(context);
                     },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Already have an account?'),
-                        Text('Login', style: TextStyle(fontWeight: FontWeight.bold, color: ColorPanel.secondaryColor)),
-                      ],
-                    ),
                   ),
                 ],
               ),
@@ -112,3 +102,4 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
+
